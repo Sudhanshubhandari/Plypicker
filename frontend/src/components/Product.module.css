@@ -1,0 +1,22 @@
+@media only  screen and (max-width: 550px)
+    {
+    .filterMenu{
+
+        position: fixed;
+        overflow: auto;
+        height: 100vh;
+        padding-left: 10px;
+        padding-top: 10px;
+        left:0;
+        top:0;
+        z-index: 1;
+        transform: translateX(-100%);
+    }
+
+    .active{
+        animation: slidein 0.5s forwards ease-in-out;
+    }
+    @keyframes slidein {
+        to {transform: translateX(0%);}
+    }
+}
