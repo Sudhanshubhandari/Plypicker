@@ -8,42 +8,46 @@ import { listProducts } from "../../actions/productActions";
 import Product from "./Product";
 
 const Products = (prop) => {
-
- 
-
   const [page, setPage] = useState(1);
   const dispatch = useDispatch();
   const productList = useSelector((state) => state.productList);
 
-  const {  products,totalCount } = productList;
+  const { products, totalCount } = productList;
 
   useEffect(() => {
     dispatch(listProducts(page));
   }, [dispatch, page]);
- 
+
   return (
     <div className="ml-4">
       <div className="flex flex-row justify-between">
-       {   <div>
-     <button onClick={()=>{
-      prop.setActive(true);
-     }}> <i class="uil uil-align-justify text-3xl"></i></button>
-      </div>}
-      <div className="flex flex-row ">
-        <div className="flex items-center">Sort By: </div>
+        {
+          <div>
+            <button
+              onClick={() => {
+                prop.setActive(true);
+              }}
+            >
+              {" "}
+              <i class="uil uil-align-justify text-3xl"></i>
+            </button>
+          </div>
+        }
+        <div className="flex flex-row ">
+          <div className="flex items-center">Sort By: </div>
 
-        <div className="ml-2 ">
-          <Input
-            label="Relevance"
-            component="select"
-            rightSection={<IconChevronDown size={14} stroke={1} />}
-          >
-            <option value="1">Relevance</option>
-            <option value="Price">Price</option>
-            <option value="Color">Color</option>
-          </Input>
+          <div className="ml-2 ">
+            <Input
+              label="Relevance"
+              component="select"
+              rightSection={<IconChevronDown size={14} stroke={1} />}
+            >
+              <option value="1">Relevance</option>
+              <option value="Price">Price</option>
+              <option value="Color">Color</option>
+            </Input>
+          </div>
         </div>
-      </div>
       </div>
 
       <div>

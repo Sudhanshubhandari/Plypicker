@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import { Checkbox, ColorPicker, RangeSlider } from "@mantine/core";
 
 import { Col, ListGroup, ListGroupItem } from "react-bootstrap";
 import brandData from "../data/brandData";
 import styles from "./Product.module.css";
-const ProductFilter = ({ active ,setActive}) => {
+const ProductFilter = ({ active, setActive }) => {
   return (
     <Col
       lg={2}
@@ -17,16 +17,18 @@ const ProductFilter = ({ active ,setActive}) => {
           <div>
             <h2 className="text-sm">FILTER</h2>
           </div>
-          {active && <div >
-            <button
-            onClick={() => {
-              setActive(false);
-            }}
-            >
-              {" "}
-              <i class="uil uil-align-justify text-3xl"></i>
-            </button>
-          </div>}
+          {active && (
+            <div>
+              <button
+                onClick={() => {
+                  setActive(false);
+                }}
+              >
+                {" "}
+                <i class="uil uil-align-justify text-3xl"></i>
+              </button>
+            </div>
+          )}
         </div>
       </ListGroup>
       <ListGroup>
