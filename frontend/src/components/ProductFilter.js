@@ -82,6 +82,7 @@ const ProductFilter = ({ active, setActive }) => {
           <ListGroup className="mt-2">
             <Checkbox
               labelPosition="left"
+              
               label="I agree to sell my privacy"
               styles={{
                 body: { justifyContent: "space-between", marginTop: "2px" },
